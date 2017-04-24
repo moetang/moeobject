@@ -1,0 +1,9 @@
+{
+  "mach_id": 1,
+  "volumes": [
+    {
+      "vol_id": 1,
+      "path": "./volumes"
+    }
+  ]
+}
