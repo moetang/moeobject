@@ -1,7 +1,7 @@
 package config
 
 type Config struct {
-	MachId  uint16         `json:"mach_id"`
+	MachId         uint16          `json:"mach_id"`
 	PhyFileConfigs []PhyFileConfig `json:"phyfiles"`
 }
 
