@@ -2,10 +2,10 @@ package config
 
 type Config struct {
 	MachId  uint16         `json:"mach_id"`
-	Volumes []VolumeConfig `json:"volumes"`
+	PhyFileConfigs []PhyFileConfig `json:"phyfiles"`
 }
 
-type VolumeConfig struct {
-	VolId uint16 `json:"vol_id"`
+type PhyFileConfig struct {
+	VolId uint16 `json:"phyfile_id"`
 	Path  string `json:"path"`
 }

@@ -1,8 +1,8 @@
 {
   "mach_id": 1,
-  "volumes": [
+  "phyfiles": [
     {
-      "vol_id": 1,
+      "phyfile_id": 1,
       "path": "./volumes"
     }
   ]
