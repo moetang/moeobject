@@ -66,5 +66,4 @@ N bytes, rest data: length step, 1K, 4K, 16K, 32K, 256K, ALL; fields are in orde
 4 bytes, length: same as size field of File Item
 2 bytes, alt key: LE
 4 bytes, flags: same as flags field of File Item
-4 bytes, padding: {0x88 ...}
 ```
