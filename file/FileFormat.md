@@ -5,8 +5,10 @@
 4 bytes, Header: magic number, 0x76, 0x3E, 0xB1, 0x3F
 2 bytes, ID: 0-65535, LE
 2 bytes, type: 0x0001-normal
-4 bytes, reserved: 0x00, 0x00, 0x00, 0x00
+2 bytes, phyfile header size: max 512K, exclude fixed part, LE, #*8 bytes
+2 bytes, reserved: 0x00, 0x00
 4 bytes, Footer: magic number, 0x52, 0x1F, 0x15, 0xEA
+N bytes, header filled: 0x00...
 ```
 
 # 2. File Segment
@@ -17,12 +19,12 @@
 2 bytes, type: first byte 1->simple file, 2->replica, 3->ec / second byte 1->variable length, 2 fixed length
 2 bytes, ID: 0-65535, LE
 4 bytes, flags:
-2 bytes, file segment header size: max 512K, include fixed part, LE
+2 bytes, file segment header size: max 512K, exclude fixed part, LE, #*8 bytes
 2 bytes, version: 0x0001->current
 4 bytes, fixed part checksum: LE
 4 bytes, Footer: magic number 0x52, 0x1F, 0x15, 0xEB
 --> rest of header
-N bytes, rest data: length step, 1K, 4K, 16K, 32K, 256K, ALL; fields are in order
+N bytes, rest data: length step, 1K, 4K, 16K, 32K, 64K, 128K, 256K, ALL; fields are in order
   --> 56 bytes
   16 bytes, file segment full id: none {0x00 ...}
   16 bytes, reserved id: none {0x00 ...}
