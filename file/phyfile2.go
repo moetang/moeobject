@@ -24,13 +24,14 @@ func LoadPhyFile2(opt PhyFileOpt) {
 }
 
 func (this *PhyFile2) GetObject(id ObjectId) ([]byte, error) {
-
+	return nil, nil
 }
 
 func (this *PhyFile2) PutObject(data []byte, putOpt PutOpt) (ObjectId, error) {
 	//TODO only latest FileSeg can be written at the same time
+	return ObjectId{}, nil
 }
 
 func (this *PhyFile2) ModifyObject(data []byte, id ObjectId) ([]byte, error) {
-
+	return nil, nil
 }

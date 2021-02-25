@@ -2,32 +2,26 @@ package main
 
 import (
 	"encoding/json"
-	"flag"
-	"fmt"
+	"github.com/moetang/moeobject/dbfile"
 	"io/ioutil"
 	"os"
 
 	"github.com/moetang/moeobject/config"
 	"github.com/moetang/moeobject/file"
-)
 
-var (
-	configPath string
+	scaffold "github.com/moetang/webapp-scaffold"
 )
-
-func init() {
-	flag.StringVar(&configPath, "config", "", "-config=moeobject.config")
-}
 
 func main() {
-	flag.Parse()
-
-	if configPath == "" {
-		fmt.Println("need config file.")
-		return
+	webscaff, err := scaffold.NewFromConfigFile("moeobject.toml")
+	if err != nil {
+		panic(err)
 	}
+	dbfile.SyncStart(webscaff)
+}
 
-	f, err := os.Open(configPath)
+func todo() {
+	f, err := os.Open("")
 	if err != nil {
 		panic(err)
 	}
